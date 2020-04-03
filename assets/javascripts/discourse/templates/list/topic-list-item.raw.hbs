@@ -8,6 +8,12 @@
   {{#if tilesStyle}}
     <div class="topic-header-grid">
       {{raw "list/topic-list-title" topic=topic tilesStyle=tilesStyle showTopicPostBadges=showTopicPostBadges}}
+      
+      <div class='topic-replies posts-map {{likesHeat}} inline sub' title='{{title}}'>
+        <a href class='posts-map badge-posts {{likesHeat}}'>{{number topic.replyCount}} {{d-icon "comments"}}</a>
+        <span>{{i18n 'replies_lowercase' count=topic.replyCount}}</span>
+      </div>
+      
       <div class="topic-category">
         {{#if showCategoryBadge}}
           {{category-link topic.category}}
